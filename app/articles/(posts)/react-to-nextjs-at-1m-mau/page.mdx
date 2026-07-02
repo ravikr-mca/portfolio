@@ -1,0 +1,39 @@
+export const metadata = {
+  title: "React → Next.js at 1M MAU: lessons from tiket.com",
+  description:
+    "What actually matters when migrating a high-traffic product to Next.js: WebViews, performance budgets, and shipping without stopping the roadmap.",
+};
+
+# React → Next.js at 1M MAU: lessons from tiket.com
+
+<p className="lead">
+  At tiket.com I led the migration of the Flight product — serving roughly a
+  million monthly active users — from legacy React to Next.js and TypeScript.
+  A few lessons survived contact with production.
+</p>
+
+## Migrate by route, not by rewrite
+
+A big-bang rewrite at this traffic level is a roadmap-killer. We moved
+route-by-route, keeping legacy and Next.js surfaces running side by side, so
+feature work never stopped. Things To Do, the entertainment vertical, followed
+the same playbook and came out ~50% faster on page loads.
+
+## WebViews are your real production environment
+
+A large share of traffic came through in-app WebViews on iOS and Android.
+Anything you don't test inside a WebView — navigation, auth handoffs, payment
+redirects — will break inside a WebView. Simulator-driven debugging was a
+first-class part of the workflow, not an afterthought.
+
+## TypeScript pays for itself during the migration, not after
+
+Typing the legacy code as we moved it surfaced years of silent contract drift
+between frontend and backend. Most of the "migration bugs" we caught were
+pre-existing bugs that types finally made visible.
+
+## Performance budgets beat performance sprints
+
+The ~50% load-time improvement didn't come from one heroic optimization; it
+came from treating bundle size and Core Web Vitals as budgets enforced in
+review, so regressions never accumulated into a crisis.

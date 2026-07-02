@@ -1,0 +1,43 @@
+export const metadata = {
+  title: "Shipping a production SaaS as a team of one with Claude",
+  description:
+    "How I run architecture, CI/CD, migrations, security, and product as a solo founder by treating an AI agent as a real engineering partner.",
+};
+
+# Shipping a production SaaS as a team of one with Claude
+
+<p className="lead">
+  Her Aviation Era runs in production with paying users, three payment
+  gateways, governed database migrations, and daily encrypted backups. It was
+  built and is operated by exactly one engineer. This is how.
+</p>
+
+## Treat the agent like a teammate, not autocomplete
+
+The biggest mindset shift is moving from "AI writes snippets" to "AI owns
+workflows." My agent doesn't just write components — it creates feature
+branches, applies migrations to staging, watches CI, opens pull requests, and
+merges after my in-chat approval. I review outcomes, not keystrokes.
+
+## Guardrails make speed safe
+
+Solo doesn't mean reckless. Every change flows through the same pipeline a
+good team would use:
+
+- Feature branch → staging environment → production, with verification at each stage
+- CI gates (lint, type-check, build) on every pull request
+- Database migrations as append-only files, applied to staging first, gated behind a manual confirmation for production
+- Row-Level Security audited on every table, and a daily encrypted 3-2-1 backup pipeline
+
+The agent executes these steps; the process ensures a bad day can't become a
+bad month.
+
+## Where the human stays in the loop
+
+Product judgment, approval gates, and anything irreversible. I decide what to
+build and when to ship; the agent compresses everything between those two
+decisions. That division of labor is what makes a team of one feel like a team
+of five.
+
+*More detail on the architecture is in the*
+[*Her Aviation Era case study*](/projects/her-aviation-era)*.*
