@@ -2,7 +2,7 @@ export const site = {
   name: "Ravi Kumar",
   role: "Senior Frontend / Full-Stack Engineer",
   tagline: "Founder, Her Aviation Era",
-  url: "https://ravikr-mca.github.io/portfolio",
+  url: "https://ravikr.vercel.app",
   location: "Dubai, UAE",
   availability: "Open to remote roles",
   email: "ravichoudhary1722@gmail.com",
