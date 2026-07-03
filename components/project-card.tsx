@@ -36,9 +36,12 @@ export function ProjectCard({ project }: { project: Project }) {
     </article>
   );
 
-  if (project.href) {
+  const href =
+    project.href ?? (project.caseStudy ? `/projects/${project.slug}` : undefined);
+
+  if (href) {
     return (
-      <Link href={project.href} className="block h-full rounded-xl focus-visible:outline-2 focus-visible:outline-ring">
+      <Link href={href} className="block h-full rounded-xl focus-visible:outline-2 focus-visible:outline-ring">
         {inner}
       </Link>
     );

@@ -31,6 +31,11 @@ export type Project = {
   href?: string;
   external?: string;
   featured?: boolean;
+  caseStudy?: {
+    role: string;
+    overview: string[];
+    highlights: string[];
+  };
 };
 
 export const projects: Project[] = [
@@ -54,7 +59,21 @@ export const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "WebView", "Performance"],
     year: "2022–2025",
     image: "/images/tiket-flight.png",
+    external: "https://www.tiket.com/en-us/flights",
     featured: true,
+    caseStudy: {
+      role: "Senior Frontend Engineer · tiket.com · Jakarta, Indonesia",
+      overview: [
+        "tiket.com's Flight product is one of Indonesia's largest online travel surfaces, serving roughly a million monthly active users across web and in-app WebViews. The legacy React codebase had accumulated years of drift and was holding back both performance and feature velocity.",
+        "I spearheaded the end-to-end revamp: migrating the product to Next.js and TypeScript with a fully responsive design, without ever pausing the feature roadmap. The migration ran route-by-route, with legacy and new surfaces serving traffic side by side.",
+      ],
+      highlights: [
+        "Migrated the full Flight funnel — search, selection, booking — from legacy React to Next.js + TypeScript at ~1M MAU",
+        "Delivered online check-in for web and in-app WebViews, improving the airline customer experience",
+        "Debugged and optimized WebView behavior on iOS and Android simulators for consistent cross-platform behavior",
+        "Improved page performance and resolved critical bugs across bus, train, ferry, and airport service modules",
+      ],
+    },
   },
   {
     slug: "things-to-do-migration",
@@ -64,7 +83,20 @@ export const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "Migration"],
     year: "2023",
     image: "/images/things-to-do.png",
+    external: "https://www.tiket.com/en-us/to-do",
     featured: true,
+    caseStudy: {
+      role: "Senior Frontend Engineer · tiket.com · Jakarta, Indonesia",
+      overview: [
+        "Things To Do is tiket.com's entertainment-ticketing vertical — attractions, events, concerts, and experiences. The legacy JavaScript codebase made every high-demand launch a risk and every refactor a gamble.",
+        "I migrated the codebase to TypeScript first, then refactored the product onto Next.js. Typing the code as it moved surfaced years of silent contract drift between frontend and backend — most 'migration bugs' turned out to be pre-existing bugs that types finally made visible.",
+      ],
+      highlights: [
+        "~50% improvement in page load times after the Next.js migration",
+        "Full TypeScript migration improving code quality, maintainability, and developer productivity",
+        "Supported high-demand ticket launches for concerts and sports events with rapid issue resolution",
+      ],
+    },
   },
   {
     slug: "live-hiring-feed",
@@ -75,6 +107,20 @@ export const projects: Project[] = [
     year: "2026",
     image: "/images/live-hiring-feed.png",
     featured: true,
+    external: "https://heraviationera.com",
+    caseStudy: {
+      role: "Founder & Full-Stack Engineer · Her Aviation Era",
+      overview: [
+        "Aspiring cabin crew chase openings across dozens of airline career sites, each with its own format and cadence. The Live Hiring Feed turns that scattered landscape into one curated stream inside Her Aviation Era.",
+        "A fully automated pipeline scrapes 50+ international airlines daily for crew openings — open days, walk-ins, and online applications. New listings land in an admin review queue where vague or expired posts are rejected; one click publishes the curated feed to every user's dashboard.",
+      ],
+      highlights: [
+        "Automated daily scraping across 50+ airline career sources",
+        "Admin curation queue with one-click publish to all user dashboards",
+        "Filterable feed by type (open day, walk-in, online) and airline",
+        "Built on Supabase with scheduled jobs and typed ingestion pipelines",
+      ],
+    },
   },
   {
     slug: "tiket-live-streaming",
@@ -84,6 +130,19 @@ export const projects: Project[] = [
     tags: ["Next.js", "Streaming", "WebView"],
     year: "2024",
     image: "/images/tiket-live.png",
+    external: "https://www.tiket.com/en-us",
+    caseStudy: {
+      role: "Senior Frontend Engineer · tiket.com · Jakarta, Indonesia",
+      overview: [
+        "Tiket Live was tiket.com's in-house live streaming initiative — bringing live commerce and event streaming into the travel super-app, alongside a video-on-demand product.",
+        "I developed and launched both products on Next.js, optimized specifically for in-app WebViews, and collaborated cross-functionally to integrate modules across tiket.com's verticals for a unified user experience.",
+      ],
+      highlights: [
+        "Built and launched live streaming + VoD products on Next.js",
+        "Optimized playback and UI for seamless in-app WebView integration on iOS and Android",
+        "Cross-vertical module integration ensuring feature consistency across the super-app",
+      ],
+    },
   },
   {
     slug: "aspirant-toolkit",
@@ -93,6 +152,20 @@ export const projects: Project[] = [
     tags: ["React", "Product", "Interactive tools"],
     year: "2026",
     image: "/images/aspirant-toolkit.png",
+    external: "https://heraviationera.com",
+    caseStudy: {
+      role: "Founder & Full-Stack Engineer · Her Aviation Era",
+      overview: [
+        "Before spending a single application on an airline, an aspirant needs to know one thing: do I actually qualify? The Toolkit answers that in minutes — interactive tools covering the full journey from qualifying to applying to interviewing, all in one place.",
+        "Each tool encodes real airline requirements — height and arm-reach minimums, age brackets, grooming and tattoo policies — into instant, personalized results, turning scattered forum folklore into a product.",
+      ],
+      highlights: [
+        "Airline Eligibility Matcher: enter height, reach, age, and grooming details — see which of 45+ airlines you qualify for right now",
+        "BMI and body-standards checker, tattoo/grooming checker, and cabin crew salary estimator",
+        "Aptitude and situational-judgement practice plus a self-intro script builder for interview day",
+        "Freemium gating: core tools free, advanced tools drive Premium conversion",
+      ],
+    },
   },
   {
     slug: "paytm-bank-current-accounts",
@@ -102,6 +175,21 @@ export const projects: Project[] = [
     tags: ["React", "Node.js", "Fintech"],
     year: "2021",
     image: "/images/paytm-bank.png",
+    external: "https://paytm.com/",
+    caseStudy: {
+      role: "Senior Software Developer · Paytm Payments Bank · Noida, India",
+      overview: [
+        "Paytm Payments Bank runs inside India's largest consumer payments app, where the banking surfaces serve tens of millions of users. I spent three and a half years across Paytm's banking and platform teams, finishing as the architect of the Current Accounts digital journey.",
+        "The Current Accounts journey covered the full flow — onboarding, KYC, account servicing — built on React.js in the consumer app. To harden security, I implemented a Node.js API layer between frontend and backend, moving sensitive calls to a server-to-server architecture, and established the coding standards and frontend architecture used across the bank's applications.",
+      ],
+      highlights: [
+        "Architected the full digital Current Accounts journey on the Paytm Bank consumer app",
+        "Node.js API layer between frontend and backend — server-to-server security architecture",
+        "Established coding standards and frontend architecture for banking applications",
+        "Earlier at Paytm: shared banking modules, storefront banners, an asset-tracking system (React/Redux + barcode), merchant loan onboarding with document upload and selfie capture",
+        "Built Panel BFF — a Node.js authorization server for authentication across Movies, BoxOffice, FSM, BPMS, and Seller Panel",
+      ],
+    },
   },
   {
     slug: "release-and-dr-pipeline",
@@ -111,6 +199,20 @@ export const projects: Project[] = [
     tags: ["GitHub Actions", "CI/CD", "PostgreSQL", "Security"],
     year: "2026",
     image: "/images/release-pipeline.png",
+    caseStudy: {
+      role: "Founder & Full-Stack Engineer · Her Aviation Era",
+      overview: [
+        "A solo founder can't afford a bad deploy — there's no on-call rotation to catch it. So Her Aviation Era ships through the same governance a good platform team would enforce, automated end to end.",
+        "Every change flows feature branch → staging environment → production with verification at each stage. Database changes are append-only migrations applied to staging first, and production migrations run through a manually-confirmed CI job that takes a pre-migration backup before touching anything.",
+      ],
+      highlights: [
+        "Two-environment release pipeline (staging → production) with gated CI/CD on every PR via GitHub Actions",
+        "Automated migration checks and an expand/contract schema strategy for zero-downtime changes",
+        "Daily encrypted 3-2-1 backups: three copies, two storage types, one off-site (Cloudflare R2)",
+        "Postgres Row-Level Security audited across all tables; GDPR-aligned account deletion",
+        "SemVer-tagged releases with changelogs and a public what's-new feed",
+      ],
+    },
   },
 ];
 
