@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { about } from "@/content/profile";
 import { SectionHeading } from "@/components/section-heading";
 import { Reveal } from "@/components/reveal";
@@ -16,12 +17,13 @@ export function About() {
               {about.education}
             </p>
           </div>
-          <div
-            className="hidden aspect-[4/5] items-center justify-center rounded-xl border bg-muted font-mono text-[11px] text-muted-foreground sm:flex"
-            role="img"
-            aria-label="Photo placeholder"
-          >
-            [ your photo ]
+          <div className="relative hidden aspect-[4/5] overflow-hidden rounded-xl border bg-muted sm:block">
+            <Image
+              src="/images/ravi.jpg"
+              alt="Ravi Kumar"
+              fill
+              className="object-cover"
+            />
           </div>
         </div>
       </Reveal>
