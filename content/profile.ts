@@ -41,7 +41,7 @@ export const projects: Project[] = [
       "Founded and solo-built a production SaaS for aspiring cabin crew — 150+ active users in the first 7 days of launch.",
     tags: ["Next.js", "React", "TypeScript", "Supabase", "Stripe"],
     year: "2026",
-    image: "/images/her-aviation-era.svg",
+    image: "/images/her-aviation-era.png",
     href: "/projects/her-aviation-era",
     external: "https://heraviationera.com",
     featured: true,
@@ -53,7 +53,7 @@ export const projects: Project[] = [
       "Spearheaded the end-to-end migration of the Flight product from legacy React to Next.js + TypeScript, serving ~1M monthly active users.",
     tags: ["Next.js", "TypeScript", "WebView", "Performance"],
     year: "2022–2025",
-    image: "/images/tiket-flight.svg",
+    image: "/images/tiket-flight.png",
     featured: true,
   },
   {
@@ -63,7 +63,7 @@ export const projects: Project[] = [
       "Rebuilt tiket.com's entertainment-ticketing vertical on TypeScript and Next.js — ~50% faster page loads and smoother high-demand event launches.",
     tags: ["Next.js", "TypeScript", "Migration"],
     year: "2023",
-    image: "/images/things-to-do.svg",
+    image: "/images/things-to-do.png",
     featured: true,
   },
   {
@@ -73,7 +73,7 @@ export const projects: Project[] = [
       "Fully automated pipeline scraping 50+ international airlines daily for crew openings, with one-click curation from an admin panel to every user's dashboard.",
     tags: ["Automation", "Pipelines", "Supabase"],
     year: "2026",
-    image: "/images/live-hiring-feed.svg",
+    image: "/images/live-hiring-feed.png",
     featured: true,
   },
   {
@@ -83,7 +83,7 @@ export const projects: Project[] = [
       "Developed and launched tiket.com's in-house live streaming and video-on-demand products on Next.js, optimized for in-app WebViews.",
     tags: ["Next.js", "Streaming", "WebView"],
     year: "2024",
-    image: "/images/tiket-live.svg",
+    image: "/images/tiket-live.png",
   },
   {
     slug: "aspirant-toolkit",
@@ -92,7 +92,7 @@ export const projects: Project[] = [
       "Six interactive tools for cabin-crew aspirants: airline eligibility matcher (50+ airlines), BMI checker, grooming checker, salary estimator, aptitude practice, and intro script builder.",
     tags: ["React", "Product", "Interactive tools"],
     year: "2026",
-    image: "/images/aspirant-toolkit.svg",
+    image: "/images/aspirant-toolkit.png",
   },
   {
     slug: "paytm-bank-current-accounts",
@@ -101,7 +101,7 @@ export const projects: Project[] = [
       "Architected the full digital Current Accounts journey on the Paytm Bank consumer app, with a Node.js API layer for server-to-server security.",
     tags: ["React", "Node.js", "Fintech"],
     year: "2021",
-    image: "/images/paytm-bank.svg",
+    image: "/images/paytm-bank.png",
   },
   {
     slug: "release-and-dr-pipeline",
@@ -110,7 +110,7 @@ export const projects: Project[] = [
       "Two-environment release pipeline with gated CI/CD, automated migration checks, expand/contract schema strategy, and an encrypted daily 3-2-1 backup/disaster-recovery pipeline.",
     tags: ["GitHub Actions", "CI/CD", "PostgreSQL", "Security"],
     year: "2026",
-    image: "/images/release-pipeline.svg",
+    image: "/images/release-pipeline.png",
   },
 ];
 

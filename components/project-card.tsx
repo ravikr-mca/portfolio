@@ -12,7 +12,7 @@ export function ProjectCard({ project }: { project: Project }) {
             src={project.image}
             alt={`${project.title} preview`}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
           />
         ) : null}
       </div>

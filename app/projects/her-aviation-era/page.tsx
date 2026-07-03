@@ -92,10 +92,10 @@ export default function CaseStudyPage() {
       <Reveal className="mt-12">
         <div className="relative aspect-[8/5] overflow-hidden rounded-xl border bg-muted">
           <Image
-            src="/images/her-aviation-era.svg"
-            alt="Her Aviation Era product screenshot placeholder"
+            src="/images/her-aviation-era.png"
+            alt="Her Aviation Era landing page — the all-in-one cabin crew prep platform"
             fill
-            className="object-cover"
+            className="object-cover object-top"
           />
         </div>
       </Reveal>
