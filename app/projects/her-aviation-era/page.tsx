@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -67,7 +68,17 @@ export default function CaseStudyPage() {
     <article className="mx-auto w-full max-w-3xl px-4 pb-8 sm:px-6">
       <header className="pt-16 sm:pt-20">
         <Reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+          <Link
+            href="/projects"
+            className="group inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <ArrowLeft
+              className="size-4 transition-transform group-hover:-translate-x-0.5"
+              aria-hidden="true"
+            />
+            All projects
+          </Link>
+          <p className="mt-8 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
             Case study · Jan 2026 — present
           </p>
           <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
