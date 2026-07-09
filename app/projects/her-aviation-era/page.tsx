@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Her Aviation Era — case study",
   description:
-    "How a 285k-follower inbox became a production SaaS with 150+ users in its first week — solo-built with AI-augmented engineering.",
+    "How a 285k-follower inbox became a production SaaS with 250+ users in its first 2 weeks — solo-built with AI-augmented engineering.",
 };
 
 const stack = [
@@ -86,8 +86,8 @@ export default function CaseStudyPage() {
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
             The complete preparation platform for aspiring cabin crew — founded,
-            architected, and shipped by one engineer, reaching 150+ active users
-            in its first 7 days.
+            architected, and shipped by one engineer, reaching 250+ active users
+            in its first 2 weeks.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button asChild>
@@ -125,8 +125,8 @@ export default function CaseStudyPage() {
           <p>
             That inbox was a measurable, recurring problem statement. Instead of
             answering one DM at a time, I turned it into a product — and the
-            demand it predicted showed up immediately: 150+ active users in the
-            first week of launch.
+            demand it predicted showed up immediately: 250+ active users in the
+            first 2 weeks of launch.
           </p>
         </div>
       </Reveal>

@@ -17,7 +17,7 @@ export const site = {
 export const heroStats = [
   { value: "8+", label: "years of engineering" },
   { value: "~1M", label: "MAU flight product" },
-  { value: "150+", label: "users in first 7 days" },
+  { value: "250+", label: "users in first 2 weeks" },
   { value: "285k+", label: "audience turned into insight" },
 ];
 
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     slug: "her-aviation-era",
     title: "Her Aviation Era",
     description:
-      "Founded and solo-built a production SaaS for aspiring cabin crew — 150+ active users in the first 7 days of launch.",
+      "Founded and solo-built a production SaaS for aspiring cabin crew — 250+ active users in the first 2 weeks of launch.",
     tags: ["Next.js", "React", "TypeScript", "Supabase", "Stripe"],
     year: "2026",
     image: "/images/her-aviation-era.png",
@@ -237,7 +237,7 @@ export const about = {
   heading: "The inbox was the market research",
   paragraphs: [
     "My wife is an active Emirates cabin crew member, and I manage her social presence — 285k+ followers across Instagram, TikTok, and YouTube. Her inbox was flooded daily with the same questions: how do I prepare, what are the requirements, am I eligible?",
-    "I turned that inbox into a product. Her Aviation Era is the complete preparation platform for aspiring cabin crew — and it reached 150+ active users in its first 7 days. I own the entire lifecycle: architecture, full-stack development, CI/CD, database migrations, security, and DevOps, shipping as a team of one in close collaboration with Claude.",
+    "I turned that inbox into a product. Her Aviation Era is the complete preparation platform for aspiring cabin crew — and it reached 250+ active users in its first 2 weeks. I own the entire lifecycle: architecture, full-stack development, CI/CD, database migrations, security, and DevOps, shipping as a team of one in close collaboration with Claude.",
     "Before founding, I spent eight years building for scale — travel at tiket.com, banking at Paytm — and pioneered AI-augmented engineering practices on every team I joined.",
   ],
   education:
