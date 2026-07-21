@@ -214,6 +214,29 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "docwing-cv-builder",
+    title: "DocWing CV Builder",
+    description:
+      "Free, private ATS-friendly CV builder — live preview, drag-and-drop sections, and an instant ATS score, with data that never leaves the browser.",
+    tags: ["Next.js", "TypeScript", "Zustand", "Zod"],
+    year: "2026",
+    image: "/images/docwing.png",
+    external: "https://docwing.vercel.app/",
+    caseStudy: {
+      role: "Solo build · first product of a small PDF/document-tools company",
+      overview: [
+        "Most free CV builders either lock the good templates behind a paywall or quietly ship your resume data to a server. DocWing's premise is the opposite: a fully client-side editor with a live preview, drag-and-drop section reordering, and a real-time ATS score that tells you exactly what to fix — with no sign-up and no data ever leaving the browser.",
+        "The architecture is built to outlive its current form. The CV document is a single Zod schema with a `schemaVersion` and a `migrate()` path for forward compatibility, storage sits behind a `CvRepository` interface so a future Supabase-backed account system can drop in without touching any UI, and PDF export is behind its own abstraction so a planned server-rendered/WebView export path can replace the client-side renderer later without a rewrite.",
+      ],
+      highlights: [
+        "Fully client-side editor: live preview, drag-and-drop sections (@dnd-kit), zero data sent to a server",
+        "Real-time, synchronous ATS scoring and JD keyword matching as you type",
+        "Schema-versioned CV document (Zod) with a migrate() path, so future format changes don't break saved resumes",
+        "Storage, export, and templates all built behind clean interfaces (CvRepository, exportPdf()) specifically to support planned accounts, payments, and a server-rendered export without reworking the editor",
+      ],
+    },
+  },
+  {
     slug: "paytm-bank-current-accounts",
     title: "Paytm Bank Current Accounts",
     description:
