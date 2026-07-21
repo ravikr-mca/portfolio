@@ -1,0 +1,74 @@
+export const metadata = {
+  title: "The Judgment Call: Why I Didn't Fully Automate the Hiring Feed",
+  description:
+    "Building an AI-assisted scraping pipeline for 50+ airlines, and the trade-off between full automation and a trustworthy result.",
+};
+
+# The Judgment Call: Why I Didn't Fully Automate the Hiring Feed
+
+<p className="lead">
+  The Live Hiring Feed inside Her Aviation Era scrapes 50+ international
+  airlines daily for crew openings. I could have shipped it fully automated,
+  end to end. I didn't, and that was the right call.
+</p>
+
+## The naive version fails quietly
+
+Scraping 50+ sources is mechanically straightforward. The hard part is that
+airline career pages are wildly inconsistent — some post structured
+listings, others bury a single line in a generic careers blurb, and plenty of
+"openings" are stale postings still live months after the role actually
+closed. A fully automated pipeline can't tell a real, current opening from a
+dead one that merely looks identical in HTML. Tune the filters loosely and
+users see noise; tune them conservatively and the pipeline silently drops
+real openings nobody ever sees. Both failure modes are invisible until a user
+notices — and by then the feed has already lost their trust.
+
+## Recall, ranking, and presentation are different problems
+
+I've come to think about "the results aren't useful" as three separable
+failure modes, and this pipeline forced me to design around all three at
+once:
+
+- **Recall** — did the real opening even enter the candidate set, or did a
+  parser or filter exclude it before anything downstream ran?
+- **Ranking/curation** — is it present but indistinguishable from noise,
+  because nothing separates a genuine listing from a stale one?
+- **Presentation** — is the good listing there and correctly identified, but
+  the UI doesn't surface the signal (posting date, application status) a user
+  needs to trust it?
+
+A fully automated pipeline only really solves recall. Curation and
+presentation are where trust is actually won or lost, and neither is a
+problem a scraper can solve by itself.
+
+## The trade-off I made: automate ingestion, gate publishing
+
+I built the pipeline to do ingestion and normalization automatically —
+scraping, parsing, structuring — but routed every result through an admin
+curation queue before anything reached a user's dashboard. One click to
+approve or reject. That costs real, recurring review time. What it buys is a
+feed whose actual promise — this is real, current, worth applying to — stays
+true from the first day, instead of shipping a fully hands-off system I'd
+have had to win back trust in after the first bad batch went out.
+
+## Isolating failure so one broken source doesn't sink the feed
+
+The second decision was architectural, not process: ingestion, normalization,
+and publishing run as separate stages with their own state, rather than one
+monolithic job. Airline career pages change their HTML structure often enough
+that scraping breaks regularly — with isolated stages, a broken source fails
+on its own, gets patched, and re-runs without taking the rest of the pipeline
+down with it.
+
+## Where I'd add more automation, and where I wouldn't
+
+Recall and normalization are exactly the layer where more automation keeps
+paying off — better parsers, more sources, smarter change-detection when a
+site's structure shifts. Curation is the layer I'd be slow to fully hand
+over, because the cost of one bad "current opening" reaching a user who's
+timing their application around it is much higher than the cost of a human
+spending a few extra minutes a day reviewing a queue.
+
+*More on the product this belongs to is in the*
+[*Her Aviation Era case study*](/projects/her-aviation-era)*.*

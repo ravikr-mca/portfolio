@@ -1,0 +1,76 @@
+export const metadata = {
+  title: "Debugging in a Black Box: What WebViews Taught Me About Cross-Platform Web",
+  description:
+    "The specific, under-documented failure classes of shipping web products inside native app WebViews — and the debugging loop that survived contact with iOS and Android.",
+};
+
+# Debugging in a Black Box: What WebViews Taught Me About Cross-Platform Web
+
+<p className="lead">
+  At tiket.com, a large share of the Flight product's traffic didn't load in
+  a browser at all — it loaded inside a WebView embedded in our iOS and
+  Android apps. That single fact broke almost every assumption I'd built up
+  as a web engineer.
+</p>
+
+## A WebView is not a smaller browser
+
+The instinct is to treat a WebView as "the browser, but embedded." It isn't.
+It's a host environment you don't control, running inside a native app that
+intercepts navigation, manages its own cookie jar, and often ships an older
+or differently-configured rendering engine than the system browser. Code that
+behaves identically in Chrome and Safari would diverge the moment it ran
+inside our own apps — and the divergence wasn't consistent between iOS and
+Android either, so "it works in the WebView" had to mean both platforms, not
+one.
+
+## The failure classes nobody documents
+
+Four categories of bugs kept recurring, and none of them showed up in normal
+browser testing:
+
+- **Viewport and keyboard resize.** Focusing an input to enter a passenger's
+  name could resize the visible viewport unpredictably, shoving fixed-position
+  UI off-screen on one platform while behaving fine on the other.
+- **Storage persistence.** LocalStorage and cookies didn't always survive a
+  WebView being backgrounded or the host app being killed and relaunched —
+  session state that a normal browser tab preserves without thinking.
+- **Deep-link handoff.** Payment redirects and auth callbacks that assumed a
+  browser's navigation model sometimes failed to hand control back to the
+  native app correctly, leaving a user stuck mid-flow.
+- **Console and DevTools access.** Standard browser DevTools often didn't
+  attach to the embedded WebView at all, or attached but couldn't reproduce
+  the actual embedded behavior — the exact tool you'd reach for first was the
+  least reliable one.
+
+## The debugging loop that actually worked
+
+I stopped trusting production bug reports as a starting point and rebuilt the
+reproduction loop around the iOS and Android simulators directly: reproduce
+the issue inside the real embedded context first, instrument the WebView
+bridge to surface console output somewhere I could actually read it, and
+treat each platform's WebView as its own target rather than assuming a fix on
+one would hold on the other.
+
+## The checklist that stopped the regressions
+
+The hardest part wasn't fixing any individual bug — it was that the same
+class of bug kept resurfacing with every new feature, because "test it on
+web" quietly meant "test it in a real browser," not "test it in the
+WebView." I built a short internal checklist — viewport behavior, storage
+persistence, deep-link handoff, keyboard resize — that every new feature got
+run against inside both simulators before shipping. That one process change
+did more for stability than any single bug fix, because it moved the check
+from "if someone remembers" to "every feature, every time."
+
+## Why this matters beyond travel apps
+
+Any product with an embedded web surface — a Chrome extension's popup, a
+mobile app's in-app browser, a payments SDK's checkout webview — inherits
+this exact class of problem: your code runs inside a host you don't fully
+control, with constraints a standalone web app never has to think about.
+Treating that host as a genuinely different platform, not "the browser but
+smaller," is the mindset shift that actually holds up.
+
+*More on the product this came from is in the*
+[*tiket.com Flight revamp case study*](/projects/tiket-flight-revamp)*.*

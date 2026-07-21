@@ -396,6 +396,22 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "debugging-in-a-black-box",
+    title: "Debugging in a Black Box: What WebViews Taught Me About Cross-Platform Web",
+    summary:
+      "The specific, under-documented failure classes of shipping web products inside native app WebViews — and the debugging loop that survived contact with iOS and Android.",
+    date: "2026-07-20",
+    readingTime: "6 min read",
+  },
+  {
+    slug: "why-i-didnt-fully-automate-hiring-feed",
+    title: "The Judgment Call: Why I Didn't Fully Automate the Hiring Feed",
+    summary:
+      "Building an AI-assisted scraping pipeline for 50+ airlines, and the trade-off between full automation and a trustworthy result.",
+    date: "2026-07-18",
+    readingTime: "5 min read",
+  },
+  {
     slug: "shipping-saas-team-of-one",
     title: "Shipping a production SaaS as a team of one with Claude",
     summary:
