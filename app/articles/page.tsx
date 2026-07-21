@@ -3,6 +3,7 @@ import Link from "next/link";
 import { articles } from "@/content/profile";
 import { formatDate } from "@/components/sections/writing";
 import { Reveal } from "@/components/reveal";
+import { HeroGlow } from "@/components/hero-glow";
 
 export const metadata: Metadata = {
   title: "Articles",
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
 export default function ArticlesPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-4 pb-8 sm:px-6">
-      <section className="pt-16 sm:pt-20">
+      <section className="relative pt-16 sm:pt-20">
+        <HeroGlow />
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
             Articles
@@ -31,7 +33,7 @@ export default function ArticlesPage() {
             <Reveal key={article.slug} delay={0.04 * i}>
               <Link
                 href={`/articles/${article.slug}`}
-                className="group block rounded-xl border bg-card p-6 transition-colors hover:border-foreground/25 focus-visible:outline-2 focus-visible:outline-ring"
+                className="group block rounded-xl border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-foreground/25 hover:shadow-lg hover:shadow-black/5 focus-visible:outline-2 focus-visible:outline-ring dark:hover:shadow-black/20"
               >
                 <h2 className="text-lg font-semibold tracking-tight group-hover:underline group-hover:underline-offset-4">
                   {article.title}

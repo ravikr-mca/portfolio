@@ -2,10 +2,12 @@ import { Download, Mail } from "lucide-react";
 import { site, heroStats } from "@/content/profile";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/reveal";
+import { HeroGlow } from "@/components/hero-glow";
 
 export function Hero() {
   return (
-    <section aria-label="Introduction" className="pt-16 sm:pt-24">
+    <section aria-label="Introduction" className="relative pt-16 sm:pt-24">
+      <HeroGlow />
       <Reveal>
         <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs text-muted-foreground">
           <span className="relative flex size-2" aria-hidden="true">

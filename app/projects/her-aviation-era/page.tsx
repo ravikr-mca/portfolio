@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { HeroGlow } from "@/components/hero-glow";
 
 export const metadata: Metadata = {
   title: "Her Aviation Era — case study",
@@ -66,7 +67,8 @@ const discipline = [
 export default function CaseStudyPage() {
   return (
     <article className="mx-auto w-full max-w-3xl px-4 pb-8 sm:px-6">
-      <header className="pt-16 sm:pt-20">
+      <header className="relative pt-16 sm:pt-20">
+        <HeroGlow />
         <Reveal>
           <Link
             href="/projects"

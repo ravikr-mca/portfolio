@@ -7,6 +7,7 @@ import { projects } from "@/content/profile";
 import { Reveal } from "@/components/reveal";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { HeroGlow } from "@/components/hero-glow";
 
 const caseStudyProjects = projects.filter(
   (p) => p.caseStudy && p.slug !== "her-aviation-era"
@@ -42,7 +43,8 @@ export default async function ProjectCaseStudyPage({
 
   return (
     <article className="mx-auto w-full max-w-3xl px-4 pb-8 sm:px-6">
-      <header className="pt-16 sm:pt-20">
+      <header className="relative pt-16 sm:pt-20">
+        <HeroGlow />
         <Reveal>
           <Link
             href="/projects"

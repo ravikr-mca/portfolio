@@ -5,7 +5,7 @@ import type { Project } from "@/content/profile";
 
 export function ProjectCard({ project }: { project: Project }) {
   const inner = (
-    <article className="group flex h-full flex-col overflow-hidden rounded-xl border bg-card transition-colors hover:border-foreground/25">
+    <article className="group flex h-full flex-col overflow-hidden rounded-xl border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-foreground/25 hover:shadow-lg hover:shadow-black/5 dark:hover:shadow-black/20">
       <div className="relative aspect-[8/5] overflow-hidden border-b bg-muted">
         {project.image ? (
           <Image

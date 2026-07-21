@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { projects } from "@/content/profile";
 import { ProjectCard } from "@/components/project-card";
 import { Reveal } from "@/components/reveal";
+import { HeroGlow } from "@/components/hero-glow";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -12,7 +13,8 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-4 pb-8 sm:px-6">
-      <section className="pt-16 sm:pt-20">
+      <section className="relative pt-16 sm:pt-20">
+        <HeroGlow />
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
             Projects
