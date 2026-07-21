@@ -168,6 +168,52 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "workspace-designer",
+    title: "Workspace Designer · monis.rent",
+    description:
+      "An illustrated, drag-free room configurator for a furniture-rental challenge — swap desks, chairs, and monitors in a live SVG scene and rent the setup in one tap.",
+    tags: ["Next.js", "TypeScript", "Motion", "Tailwind CSS 4"],
+    year: "2026",
+    image: "/images/workspace-designer.png",
+    external: "https://workspace-designer-olive.vercel.app/",
+    caseStudy: {
+      role: "Solo build · Desent Solutions developer challenge",
+      overview: [
+        "The brief asked for a fun, visual alternative to a boring product catalog for monis.rent, a Bali furniture-rental service. Rather than a grid of product cards, I made the illustrated room itself the product page: a slot compositor places hand-drawn SVG items — desks, chairs, monitors, lighting, plants — into a live scene that updates as you build your setup.",
+        "Every design decision was aimed at instant gratification and shareability: three starter bundles fill the room in one tap, the entire configuration is encoded into the URL so a setup can be shared or bookmarked with no account or database, and a running $/week total is always visible through to a checkout that closes the loop with real duration-based pricing and multi-month discounts.",
+      ],
+      highlights: [
+        "Hand-drawn SVG scene compositor: desks swap without losing what's on them, monitors auto-arrange as you add more, floor items claim their own corners",
+        "Shareable, stateless setups — the full configuration lives in the URL query string, no backend or database required",
+        "Real-feeling pricing modeled on monis.rent's actual catalog: weekly rates, running total, and 1-week/1-month/3-month terms with 10–20% long-stay discounts",
+        "Mobile-first and accessible: verified at 375/768/1440 with zero horizontal scroll, keyboard-operable controls, visible focus rings, 44px touch targets, and every spring/motion effect gated behind prefers-reduced-motion",
+      ],
+    },
+  },
+  {
+    slug: "perch-feed",
+    title: "Perch Feed",
+    description:
+      "A social-feed product demo grown from five timed frontend-assessment features into a complete app — explore, profiles, threaded comments, and notifications, with an original amber visual identity.",
+    tags: ["React 19", "TypeScript", "Vite", "Tailwind CSS 4"],
+    year: "2026",
+    image: "/images/perch-feed.png",
+    external: "https://perch-feed.vercel.app/",
+    caseStudy: {
+      role: "Solo build · reconstructed from a timed frontend assessment",
+      overview: [
+        "Five of this app's features — repost, mentions autocomplete, infinite scroll that preserves scroll position, keyboard-driven navigation, and drafts with content warnings — were originally built against a real, proprietary codebase during a timed frontend engineering assessment. That repo isn't mine to share, so I rebuilt just the frontend logic and UX I personally designed from scratch, against a fully mocked data layer, and grew it into a complete product: explore/search, user profiles with followers, threaded comments, and notifications.",
+        "The goal was portfolio-grade polish, not an assessment answer: an original warm-amber visual identity (OKLCH color, a small set of named accent roles rather than generic slate-and-indigo), purposeful motion — heartbeat likes, repost spin, staggered card entrance — and a distinct per-page identity via a gradient icon-badge header, all gated behind prefers-reduced-motion.",
+      ],
+      highlights: [
+        "Rebuilt 5 assessment features from scratch against mock data: repost, @mention autocomplete, position-preserving infinite scroll, full keyboard navigation, and drafts with content warnings",
+        "Extended into a complete social app: explore/search, profiles with followers, threaded comments, and a notifications feed",
+        "Zero real backend — a typed in-memory mock API with simulated network latency, persisted to localStorage so state survives a reload, written to swap for a real backend with minimal UI changes",
+        "One PostCard component with a variant prop drives both the compact feed card and the larger single-post detail view, so the two can never visually drift apart",
+      ],
+    },
+  },
+  {
     slug: "paytm-bank-current-accounts",
     title: "Paytm Bank Current Accounts",
     description:
