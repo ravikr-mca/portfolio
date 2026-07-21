@@ -33,7 +33,7 @@ export default function ArticlesPage() {
             <Reveal key={article.slug} delay={0.04 * i}>
               <Link
                 href={`/articles/${article.slug}`}
-                className="group block rounded-xl border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-foreground/25 hover:shadow-lg hover:shadow-black/5 focus-visible:outline-2 focus-visible:outline-ring dark:hover:shadow-black/20"
+                className="group block rounded-xl border bg-card p-6 transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-foreground/25 hover:shadow-lg hover:shadow-black/5 active:scale-[0.98] active:duration-150 focus-visible:outline-2 focus-visible:outline-ring motion-reduce:hover:translate-y-0 dark:hover:shadow-black/20"
               >
                 <h2 className="text-lg font-semibold tracking-tight group-hover:underline group-hover:underline-offset-4">
                   {article.title}

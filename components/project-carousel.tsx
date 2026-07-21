@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { Project } from "@/content/profile";
 import { ProjectCard } from "@/components/project-card";
+import { EASE_OUT } from "@/lib/motion";
 
 export function ProjectCarousel({ projects }: { projects: Project[] }) {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -62,10 +63,10 @@ export function ProjectCarousel({ projects }: { projects: Project[] }) {
             key={project.slug}
             data-carousel-card
             className="w-[280px] shrink-0 snap-start sm:w-[320px]"
-            initial={reduceMotion ? undefined : { opacity: 0, y: 24 }}
-            whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+            initial={reduceMotion ? undefined : { opacity: 0, transform: "translateY(24px)" }}
+            whileInView={reduceMotion ? undefined : { opacity: 1, transform: "translateY(0px)" }}
             viewport={{ once: true, margin: "-40px", amount: 0.3 }}
-            transition={{ duration: 0.45, delay: Math.min(i, 6) * 0.05, ease: [0.21, 0.47, 0.32, 0.98] }}
+            transition={{ duration: 0.45, delay: Math.min(i, 6) * 0.05, ease: EASE_OUT }}
           >
             <ProjectCard project={project} />
           </motion.div>
@@ -80,7 +81,7 @@ export function ProjectCarousel({ projects }: { projects: Project[] }) {
             onClick={() => scrollByCard(-1)}
             disabled={atStart}
             aria-label="Previous project"
-            className="flex size-9 items-center justify-center rounded-full border text-foreground transition-colors hover:bg-accent disabled:pointer-events-none disabled:opacity-30"
+            className="flex size-9 items-center justify-center rounded-full border text-foreground transition-[background-color,transform] duration-150 ease-out hover:bg-accent active:scale-90 disabled:pointer-events-none disabled:opacity-30"
           >
             <ChevronLeft className="size-4" aria-hidden="true" />
           </button>
@@ -89,7 +90,7 @@ export function ProjectCarousel({ projects }: { projects: Project[] }) {
             onClick={() => scrollByCard(1)}
             disabled={atEnd}
             aria-label="Next project"
-            className="flex size-9 items-center justify-center rounded-full border text-foreground transition-colors hover:bg-accent disabled:pointer-events-none disabled:opacity-30"
+            className="flex size-9 items-center justify-center rounded-full border text-foreground transition-[background-color,transform] duration-150 ease-out hover:bg-accent active:scale-90 disabled:pointer-events-none disabled:opacity-30"
           >
             <ChevronRight className="size-4" aria-hidden="true" />
           </button>
@@ -97,9 +98,9 @@ export function ProjectCarousel({ projects }: { projects: Project[] }) {
 
         <div className="relative h-1 flex-1 overflow-hidden rounded-full bg-border">
           <motion.div
-            className="absolute inset-y-0 left-0 rounded-full bg-foreground/60"
-            style={{ width: `${Math.max(12, progress * 100)}%` }}
-            transition={{ duration: reduceMotion ? 0 : 0.2 }}
+            className="absolute inset-0 origin-left rounded-full bg-foreground/60"
+            animate={{ transform: `scaleX(${Math.max(0.12, progress)})` }}
+            transition={{ duration: reduceMotion ? 0 : 0.2, ease: "linear" }}
           />
         </div>
 

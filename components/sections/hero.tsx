@@ -3,6 +3,7 @@ import { site, heroStats } from "@/content/profile";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/reveal";
 import { HeroGlow } from "@/components/hero-glow";
+import { AnimatedStat } from "@/components/animated-stat";
 
 export function Hero() {
   return (
@@ -47,7 +48,9 @@ export function Hero() {
           {heroStats.map((stat) => (
             <div key={stat.label} className="flex flex-col bg-card px-5 py-4">
               <dt className="order-2 mt-1 text-xs text-muted-foreground">{stat.label}</dt>
-              <dd className="text-2xl font-semibold tracking-tight">{stat.value}</dd>
+              <dd className="text-2xl font-semibold tracking-tight">
+                <AnimatedStat value={stat.value} />
+              </dd>
             </div>
           ))}
         </dl>

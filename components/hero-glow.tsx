@@ -15,7 +15,14 @@ export function HeroGlow() {
         animate={
           reduceMotion
             ? undefined
-            : { x: [0, 40, -20, 0], y: [0, 20, 40, 0] }
+            : {
+                transform: [
+                  "translate(0px, 0px)",
+                  "translate(40px, 20px)",
+                  "translate(-20px, 40px)",
+                  "translate(0px, 0px)",
+                ],
+              }
         }
         transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -24,7 +31,14 @@ export function HeroGlow() {
         animate={
           reduceMotion
             ? undefined
-            : { x: [0, -30, 30, 0], y: [0, 30, -10, 0] }
+            : {
+                transform: [
+                  "translate(0px, 0px)",
+                  "translate(-30px, 30px)",
+                  "translate(30px, -10px)",
+                  "translate(0px, 0px)",
+                ],
+              }
         }
         transition={{ duration: 26, repeat: Infinity, ease: "easeInOut" }}
       />
