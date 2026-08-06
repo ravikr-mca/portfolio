@@ -17,7 +17,7 @@ export const site = {
 export const heroStats = [
   { value: "8+", label: "years of engineering" },
   { value: "~1M", label: "MAU flight product" },
-  { value: "400+", label: "users in first 2 weeks" },
+  { value: "650+", label: "users in first 2 weeks" },
   { value: "350k+", label: "audience turned into insight" },
 ];
 
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     slug: "her-aviation-era",
     title: "Her Aviation Era",
     description:
-      "Founded and solo-built a production SaaS for aspiring cabin crew — 400+ active users in the first 2 weeks of launch.",
+      "Founded and solo-built a production SaaS for aspiring cabin crew — 650+ active users in the first 2 weeks of launch.",
     tags: ["Next.js", "React", "TypeScript", "Supabase", "Stripe"],
     year: "2026",
     image: "/images/her-aviation-era.png",
@@ -231,6 +231,7 @@ export const projects: Project[] = [
       highlights: [
         "Fully client-side editor: live preview, drag-and-drop sections (@dnd-kit), zero data sent to a server",
         "Real-time, synchronous ATS scoring and JD keyword matching as you type",
+        "\"Fit to 1 page\": auto-shrinks a CV to a single A4 page instead of forcing manual trimming",
         "Schema-versioned CV document (Zod) with a migrate() path, so future format changes don't break saved resumes",
         "Storage, export, and templates all built behind clean interfaces (CvRepository, exportPdf()) specifically to support planned accounts, payments, and a server-rendered export without reworking the editor",
       ],
@@ -306,7 +307,7 @@ export const about = {
   heading: "The inbox was the market research",
   paragraphs: [
     "My wife is an active Emirates cabin crew member, and I manage her social presence — 350k+ followers across Instagram, TikTok, and YouTube. Her inbox was flooded daily with the same questions: how do I prepare, what are the requirements, am I eligible?",
-    "I turned that inbox into a product. Her Aviation Era is the complete preparation platform for aspiring cabin crew — and it reached 400+ active users in its first 2 weeks. I own the entire lifecycle: architecture, full-stack development, CI/CD, database migrations, security, and DevOps, shipping as a team of one in close collaboration with Claude.",
+    "I turned that inbox into a product. Her Aviation Era is the complete preparation platform for aspiring cabin crew — and it reached 650+ active users in its first 2 weeks. I own the entire lifecycle: architecture, full-stack development, CI/CD, database migrations, security, and DevOps, shipping as a team of one in close collaboration with Claude.",
     "Before founding, I spent eight years building for scale — travel at tiket.com, banking at Paytm — and pioneered AI-augmented engineering practices on every team I joined.",
   ],
   education:
@@ -418,6 +419,14 @@ export type Article = {
 };
 
 export const articles: Article[] = [
+  {
+    slug: "61-to-90-percent-coverage",
+    title: "61% to 90%: How I Actually Raised Test Coverage on a Solo SaaS",
+    summary:
+      "Scoping coverage to the surfaces that matter, a local pre-commit gate that mirrors CI, and the gap between what Vitest reports and what Codecov enforces.",
+    date: "2026-08-08",
+    readingTime: "6 min read",
+  },
   {
     slug: "debugging-in-a-black-box",
     title: "Debugging in a Black Box: What WebViews Taught Me About Cross-Platform Web",

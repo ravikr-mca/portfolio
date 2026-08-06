@@ -10,7 +10,7 @@ import { HeroGlow } from "@/components/hero-glow";
 export const metadata: Metadata = {
   title: "Her Aviation Era — case study",
   description:
-    "How a 350k-follower inbox became a production SaaS with 400+ users in its first 2 weeks — solo-built with AI-augmented engineering.",
+    "How a 350k-follower inbox became a production SaaS with 650+ users in its first 2 weeks — solo-built with AI-augmented engineering.",
 };
 
 const stack = [
@@ -53,6 +53,14 @@ const features = [
     title: "Admin console",
     body: "Revenue reporting split by currency, customer insight badges, booking availability management, and a curated hiring-feed review queue.",
   },
+  {
+    title: "Group Discussion prep",
+    body: "A dedicated GD prep track with its own pricing tier, built to cover a recruitment stage most competitors ignore.",
+  },
+  {
+    title: "Airline profile pages & open days",
+    body: "SEO-indexed profile pages per airline plus an open-days calendar with free/gated alerts, routed and scroll-fixed for mobile.",
+  },
 ];
 
 const discipline = [
@@ -62,6 +70,7 @@ const discipline = [
   "Postgres Row-Level Security audited and enforced; GDPR-aligned account deletion",
   "Encrypted daily 3-2-1 backup and disaster-recovery pipeline",
   "SemVer-tagged releases with a public what's-new feed",
+  "Test coverage raised from 61% to a 90% CI-enforced floor, risk-weighted toward money, access, and API surfaces",
 ];
 
 export default function CaseStudyPage() {
@@ -88,7 +97,7 @@ export default function CaseStudyPage() {
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
             The complete preparation platform for aspiring cabin crew — founded,
-            architected, and shipped by one engineer, reaching 400+ active users
+            architected, and shipped by one engineer, reaching 650+ active users
             in its first 2 weeks.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
@@ -127,7 +136,7 @@ export default function CaseStudyPage() {
           <p>
             That inbox was a measurable, recurring problem statement. Instead of
             answering one DM at a time, I turned it into a product — and the
-            demand it predicted showed up immediately: 400+ active users in the
+            demand it predicted showed up immediately: 650+ active users in the
             first 2 weeks of launch.
           </p>
         </div>

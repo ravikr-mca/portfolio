@@ -1,0 +1,71 @@
+export const metadata = {
+  title: "61% to 90%: How I Actually Raised Test Coverage on a Solo SaaS",
+  description:
+    "Scoping coverage to the surfaces that matter, a local pre-commit gate that mirrors CI, and the gap between what Vitest reports and what Codecov enforces.",
+};
+
+# 61% to 90%: How I Actually Raised Test Coverage on a Solo SaaS
+
+<p className="lead">
+  Her Aviation Era's Codecov project floor is 90% today. It didn't start
+  there — it started at a risk-based 70%, scoped deliberately, then got
+  raised once the number was real. The scoping decision mattered more than
+  the number.
+</p>
+
+## Scope before percentage
+
+Chasing "90% of the codebase" would have meant writing shallow tests for
+~250 UI components and pages just to move a number — the kind of coverage
+that passes CI and catches nothing. Instead, coverage targets `lib/**`,
+`app/api/**`, and `app/actions/**` only: money, access control, entitlements,
+scrapers, booking logic — the surfaces where a silent regression costs a
+user their payment or their data. Components and pages stay untested until a
+bug in one ships twice. That's not a gap I'm ignoring; it's a bet that
+testing effort is worth more concentrated on `lib/orders.ts` than spread
+across a hero section.
+
+## Two floors, not one
+
+Codecov enforces two different targets on every PR, and they answer
+different questions. `patch: 70%` asks "are the lines this PR actually
+touched tested?" — the number that matters day to day. `project: 90%,
+threshold: 1%` is a hard floor on the whole scoped surface: a PR that drags
+total coverage down more than one point fails CI outright, full stop. The
+project floor only went in once coverage had actually reached 90% for real —
+raising the bar before hitting it would have just meant failing CI on
+unrelated work.
+
+## A pre-commit gate that mirrors CI
+
+Finding out you're under the coverage floor after opening a PR is a slow
+feedback loop. `.husky/pre-commit` runs `vitest --coverage` on every commit
+to a feature branch and fails the commit if the local thresholds
+(lines/statements ≥ 90%, mirroring `codecov.yml`) aren't met — skipped on
+`main`/`staging`, which only ever receive merges, never a direct commit. New
+code in the tested scope ships with a colocated test in the same commit, or
+the commit doesn't happen.
+
+## Vitest and Codecov don't agree, and that's fine
+
+The first time local coverage read 98% but Codecov's PR comment showed 89%,
+it looked like a bug. It isn't. Vitest counts *line* coverage — a line that
+executed at all counts as covered. Codecov additionally requires every
+*branch* on that line to have been taken; `a && b` where `b` never
+evaluated is a partial, and partials don't count toward Codecov's headline
+percentage. A local run around 98% routinely lands 8–10 points lower on
+Codecov. Knowing the gap in advance meant I set the local Vitest threshold to
+90% as a floor to *defend*, not a number I expected to match Codecov exactly
+— and verify against the actual PR comment before assuming a target's hit.
+
+## What actually changed the number
+
+Not a testing sprint — a rule. Every new `lib/`, `app/api/`, or
+`app/actions/` change ships with its own test, colocated next to the file it
+tests (`lib/coupons.ts` → `lib/coupons.test.ts`), pulling from shared
+fixtures and a mocked Supabase query builder in `test/`. Coverage climbed as
+a side effect of that rule holding for months, not from going back to
+backfill a number.
+
+*More on the release discipline this fits into is in the*
+[*Her Aviation Era case study*](/projects/her-aviation-era)*.*
