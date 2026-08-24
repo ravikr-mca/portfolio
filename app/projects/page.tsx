@@ -23,7 +23,7 @@ export default function ProjectsPage() {
             Things I&apos;ve built
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            From a solo-founded production SaaS to migrations serving a million
+            From a solo-built production SaaS to migrations serving a million
             monthly users — a selection of work across travel, fintech, and
             entertainment.
           </p>

@@ -10,7 +10,7 @@ import { HeroGlow } from "@/components/hero-glow";
 export const metadata: Metadata = {
   title: "Her Aviation Era — case study",
   description:
-    "How a 350k-follower inbox became a production SaaS with 650+ users in its first 2 weeks — solo-built with AI-augmented engineering.",
+    "How a 350k-follower inbox became a production SaaS with 800+ active users — solo-built with AI-augmented engineering.",
 };
 
 const stack = [
@@ -96,9 +96,9 @@ export default function CaseStudyPage() {
             Her Aviation Era
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            The complete preparation platform for aspiring cabin crew — founded,
-            architected, and shipped by one engineer, reaching 650+ active users
-            in its first 2 weeks.
+            The complete preparation platform for aspiring cabin crew —
+            designed, architected, and shipped by one engineer, reaching 800+
+            active users.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button asChild>
@@ -136,8 +136,8 @@ export default function CaseStudyPage() {
           <p>
             That inbox was a measurable, recurring problem statement. Instead of
             answering one DM at a time, I turned it into a product — and the
-            demand it predicted showed up immediately: 650+ active users in the
-            first 2 weeks of launch.
+            demand it predicted showed up immediately: 800+ active users and
+            counting.
           </p>
         </div>
       </Reveal>

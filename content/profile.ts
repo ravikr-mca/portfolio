@@ -1,7 +1,7 @@
 export const site = {
   name: "Ravi Kumar",
   role: "Senior Frontend / Full-Stack Engineer",
-  tagline: "Founder, Her Aviation Era",
+  tagline: "Lead Engineer, Her Aviation Era",
   url: "https://ravikr.vercel.app",
   location: "Dubai, UAE",
   availability: "Open to remote roles",
@@ -11,13 +11,13 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/ravi-kumar-7834a480",
   resume: "/resume.pdf",
   intro:
-    "Senior frontend / full-stack engineer with 8+ years shipping web products at millions-of-users scale across travel, fintech, and entertainment. Most recently I founded and solo-built Her Aviation Era, a live production SaaS — owning everything from architecture and CI/CD to security and payments, with Claude as an AI engineering partner.",
+    "Senior frontend / full-stack engineer with 8+ years shipping products at scale — tiket.com's Flight product (~1M MAU), Paytm's banking flows. Based in Dubai and actively looking for my next senior frontend or full-stack-leaning role. In the meantime, I've solo-built Her Aviation Era, a live production SaaS, with Claude as an AI engineering partner.",
 };
 
 export const heroStats = [
   { value: "8+", label: "years of engineering" },
   { value: "~1M", label: "MAU flight product" },
-  { value: "650+", label: "users in first 2 weeks" },
+  { value: "800+", label: "active users" },
   { value: "350k+", label: "audience turned into insight" },
 ];
 
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     slug: "her-aviation-era",
     title: "Her Aviation Era",
     description:
-      "Founded and solo-built a production SaaS for aspiring cabin crew — 650+ active users in the first 2 weeks of launch.",
+      "Led and solo-built a production SaaS for aspiring cabin crew — 800+ active users.",
     tags: ["Next.js", "React", "TypeScript", "Supabase", "Stripe"],
     year: "2026",
     image: "/images/her-aviation-era.png",
@@ -109,7 +109,7 @@ export const projects: Project[] = [
     featured: true,
     external: "https://heraviationera.com",
     caseStudy: {
-      role: "Founder & Full-Stack Engineer · Her Aviation Era",
+      role: "Lead Engineer · Her Aviation Era",
       overview: [
         "Aspiring cabin crew chase openings across dozens of airline career sites, each with its own format and cadence. The Live Hiring Feed turns that scattered landscape into one curated stream inside Her Aviation Era.",
         "A fully automated pipeline scrapes 50+ international airlines daily for crew openings — open days, walk-ins, and online applications. New listings land in an admin review queue where vague or expired posts are rejected; one click publishes the curated feed to every user's dashboard.",
@@ -154,7 +154,7 @@ export const projects: Project[] = [
     image: "/images/aspirant-toolkit.png",
     external: "https://heraviationera.com",
     caseStudy: {
-      role: "Founder & Full-Stack Engineer · Her Aviation Era",
+      role: "Lead Engineer · Her Aviation Era",
       overview: [
         "Before spending a single application on an airline, an aspirant needs to know one thing: do I actually qualify? The Toolkit answers that in minutes — interactive tools covering the full journey from qualifying to applying to interviewing, all in one place.",
         "Each tool encodes real airline requirements — height and arm-reach minimums, age brackets, grooming and tattoo policies — into instant, personalized results, turning scattered forum folklore into a product.",
@@ -270,9 +270,9 @@ export const projects: Project[] = [
     year: "2026",
     image: "/images/release-pipeline.png",
     caseStudy: {
-      role: "Founder & Full-Stack Engineer · Her Aviation Era",
+      role: "Lead Engineer · Her Aviation Era",
       overview: [
-        "A solo founder can't afford a bad deploy — there's no on-call rotation to catch it. So Her Aviation Era ships through the same governance a good platform team would enforce, automated end to end.",
+        "A team of one can't afford a bad deploy — there's no on-call rotation to catch it. So Her Aviation Era ships through the same governance a good platform team would enforce, automated end to end.",
         "Every change flows feature branch → staging environment → production with verification at each stage. Database changes are append-only migrations applied to staging first, and production migrations run through a manually-confirmed CI job that takes a pre-migration backup before touching anything.",
       ],
       highlights: [
@@ -304,14 +304,18 @@ export const techStack = [
 ];
 
 export const about = {
-  heading: "The inbox was the market research",
+  heading: "Between roles, still shipping",
   paragraphs: [
-    "My wife is an active Emirates cabin crew member, and I manage her social presence — 350k+ followers across Instagram, TikTok, and YouTube. Her inbox was flooded daily with the same questions: how do I prepare, what are the requirements, am I eligible?",
-    "I turned that inbox into a product. Her Aviation Era is the complete preparation platform for aspiring cabin crew — and it reached 650+ active users in its first 2 weeks. I own the entire lifecycle: architecture, full-stack development, CI/CD, database migrations, security, and DevOps, shipping as a team of one in close collaboration with Claude.",
-    "Before founding, I spent eight years building for scale — travel at tiket.com, banking at Paytm — and pioneered AI-augmented engineering practices on every team I joined.",
+    "8+ years shipping consumer products at scale — tiket.com's Flight product (~1M MAU) and Paytm's banking flows. Based in Dubai, actively looking for my next senior frontend or full-stack-leaning role: full-time or B2B contract, remote, EU/US-East overlap.",
+    "In the meantime, I've solo-built Her Aviation Era (heraviationera.com), now at 800+ users, as the only engineer — architecture, payments, and CI/CD, written with Claude Code and reviewed line-by-line behind 218 tests at a 90% coverage gate.",
+    "AI doesn't replace taste — someone still has to know what good looks like, say no, and catch it when the machine gets it wrong.",
   ],
   education:
     "Master of Computer Applications (MCA) — Guru Gobind Singh Indraprastha University, Delhi",
+  architectureLink: {
+    label: "Architecture write-up",
+    href: "https://github.com/ravikr-mca/her-aviation-era-architecture",
+  },
 };
 
 export type Experience = {
@@ -323,18 +327,6 @@ export type Experience = {
 };
 
 export const experience: Experience[] = [
-  {
-    company: "Her Aviation Era",
-    role: "Founder & Full-Stack Engineer",
-    period: "Jan 2026 — Present",
-    location: "Dubai, UAE · heraviationera.com",
-    bullets: [
-      "Designed and built the entire product end-to-end on Next.js, React, TypeScript, and Supabase — authentication, booking, content delivery, and a member dashboard.",
-      "Architected a freemium model with tiered gating across 15+ surfaces and integrated three payment gateways (Stripe, PayPal, Razorpay) for USD and INR billing.",
-      "Built a governed staging → production pipeline with gated CI/CD, automated migration checks, Row-Level Security, GDPR-aligned deletion, and daily encrypted 3-2-1 backups.",
-      "Shipped 10+ major features solo, directing the full lifecycle in AI-augmented collaboration with Claude.",
-    ],
-  },
   {
     company: "tiket.com",
     role: "Senior Frontend Engineer",
@@ -447,7 +439,7 @@ export const articles: Article[] = [
     slug: "shipping-saas-team-of-one",
     title: "Shipping a production SaaS as a team of one with Claude",
     summary:
-      "How I run architecture, CI/CD, migrations, security, and product as a solo founder by treating an AI agent as a real engineering partner.",
+      "How I run architecture, CI/CD, migrations, security, and product as a solo engineer by treating an AI agent as a real engineering partner.",
     date: "2026-06-20",
     readingTime: "8 min read",
   },
