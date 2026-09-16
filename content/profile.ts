@@ -1,7 +1,7 @@
 export const site = {
   name: "Ravi Kumar",
-  role: "Senior Frontend / Full-Stack Engineer",
-  tagline: "Lead Engineer, Her Aviation Era",
+  role: "Senior Frontend Engineer",
+  tagline: "Building Her Aviation Era & DocWing",
   url: "https://ravikr.vercel.app",
   location: "Dubai, UAE",
   availability: "Open to remote roles",
@@ -11,13 +11,13 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/ravi-kumar-7834a480",
   resume: "/resume.pdf",
   intro:
-    "Senior frontend / full-stack engineer with 8+ years shipping products at scale — tiket.com's Flight product (~1M MAU), Paytm's banking flows. Based in Dubai and actively looking for my next senior frontend or full-stack-leaning role. In the meantime, I've solo-built Her Aviation Era, a live production SaaS, with Claude as an AI engineering partner.",
+    "Senior Frontend Engineer with 8+ years shipping products at scale — tiket.com's Flight product (~1M MAU), Paytm's banking flows. Based in Dubai and actively looking for my next senior frontend or full-stack-leaning role. In the meantime, I've independently built Her Aviation Era and DocWing, two live production SaaS products, with Claude Code as an AI engineering partner.",
 };
 
 export const heroStats = [
   { value: "8+", label: "years of engineering" },
   { value: "~1M", label: "MAU flight product" },
-  { value: "800+", label: "active users" },
+  { value: "1,000+", label: "active users" },
   { value: "350k+", label: "audience turned into insight" },
 ];
 
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     slug: "her-aviation-era",
     title: "Her Aviation Era",
     description:
-      "Led and solo-built a production SaaS for aspiring cabin crew — 800+ active users.",
+      "Led and solo-built a production SaaS for aspiring cabin crew — 1,000+ active users.",
     tags: ["Next.js", "React", "TypeScript", "Supabase", "Stripe"],
     year: "2026",
     image: "/images/her-aviation-era.png",
@@ -109,7 +109,7 @@ export const projects: Project[] = [
     featured: true,
     external: "https://heraviationera.com",
     caseStudy: {
-      role: "Lead Engineer · Her Aviation Era",
+      role: "Solo build · Her Aviation Era",
       overview: [
         "Aspiring cabin crew chase openings across dozens of airline career sites, each with its own format and cadence. The Live Hiring Feed turns that scattered landscape into one curated stream inside Her Aviation Era.",
         "A fully automated pipeline scrapes 50+ international airlines daily for crew openings — open days, walk-ins, and online applications. New listings land in an admin review queue where vague or expired posts are rejected; one click publishes the curated feed to every user's dashboard.",
@@ -154,7 +154,7 @@ export const projects: Project[] = [
     image: "/images/aspirant-toolkit.png",
     external: "https://heraviationera.com",
     caseStudy: {
-      role: "Lead Engineer · Her Aviation Era",
+      role: "Solo build · Her Aviation Era",
       overview: [
         "Before spending a single application on an airline, an aspirant needs to know one thing: do I actually qualify? The Toolkit answers that in minutes — interactive tools covering the full journey from qualifying to applying to interviewing, all in one place.",
         "Each tool encodes real airline requirements — height and arm-reach minimums, age brackets, grooming and tattoo policies — into instant, personalized results, turning scattered forum folklore into a product.",
@@ -217,23 +217,24 @@ export const projects: Project[] = [
     slug: "docwing-cv-builder",
     title: "DocWing CV Builder",
     description:
-      "Free, private ATS-friendly CV builder — live preview, drag-and-drop sections, and an instant ATS score, with data that never leaves the browser.",
-    tags: ["Next.js", "TypeScript", "Zustand", "Zod"],
+      "Free ATS-friendly CV builder — live preview, drag-and-drop sections, an instant ATS score, and optional accounts to save your CVs.",
+    tags: ["Next.js", "TypeScript", "Zustand", "Zod", "Supabase"],
     year: "2026",
     image: "/images/docwing.png",
     external: "https://docwing.vercel.app/",
     caseStudy: {
       role: "Solo build · first product of a small PDF/document-tools company",
       overview: [
-        "Most free CV builders either lock the good templates behind a paywall or quietly ship your resume data to a server. DocWing's premise is the opposite: a fully client-side editor with a live preview, drag-and-drop section reordering, and a real-time ATS score that tells you exactly what to fix — with no sign-up and no data ever leaving the browser.",
-        "The architecture is built to outlive its current form. The CV document is a single Zod schema with a `schemaVersion` and a `migrate()` path for forward compatibility, storage sits behind a `CvRepository` interface so a future Supabase-backed account system can drop in without touching any UI, and PDF export is behind its own abstraction so a planned server-rendered/WebView export path can replace the client-side renderer later without a rewrite.",
+        "Most free CV builders either lock the good templates behind a paywall or quietly ship your resume data to a server. DocWing started as the opposite: a fully client-side editor with a live preview, drag-and-drop section reordering, and a real-time ATS score that tells you exactly what to fix, no sign-up required.",
+        "The architecture was built to outlive its first form. The CV document is a single Zod schema with a `schemaVersion` and a `migrate()` path for forward compatibility, and storage sits behind a `CvRepository` interface — which is exactly what let me add Supabase-backed authentication and a \"My CVs\" dashboard later without touching the core editor UI. PDF export sits behind its own abstraction (`exportPdf()`), currently rendered server-side via Puppeteer, with an in-app preview/download modal replacing the native browser print dialog.",
       ],
       highlights: [
-        "Fully client-side editor: live preview, drag-and-drop sections (@dnd-kit), zero data sent to a server",
-        "Real-time, synchronous ATS scoring and JD keyword matching as you type",
+        "Live-preview CV editor with drag-and-drop section reordering (@dnd-kit) and 9 CV/cover-letter templates",
+        "From-scratch ATS scoring engine: real-time, synchronous JD keyword matching as you type",
         "\"Fit to 1 page\": auto-shrinks a CV to a single A4 page instead of forcing manual trimming",
-        "Schema-versioned CV document (Zod) with a migrate() path, so future format changes don't break saved resumes",
-        "Storage, export, and templates all built behind clean interfaces (CvRepository, exportPdf()) specifically to support planned accounts, payments, and a server-rendered export without reworking the editor",
+        "Supabase-backed authentication and a \"My CVs\" dashboard for saving and revisiting CVs across sessions",
+        "Server-side PDF export via Puppeteer, with an in-app preview/download modal replacing the native browser print dialog",
+        "Schema-versioned CV document (Zod) with a migrate() path, and storage/export/template layers behind clean interfaces (CvRepository, exportPdf()) so a second product in the same document-tools line can reuse the foundation",
       ],
     },
   },
@@ -270,7 +271,7 @@ export const projects: Project[] = [
     year: "2026",
     image: "/images/release-pipeline.png",
     caseStudy: {
-      role: "Lead Engineer · Her Aviation Era",
+      role: "Solo build · Her Aviation Era",
       overview: [
         "A team of one can't afford a bad deploy — there's no on-call rotation to catch it. So Her Aviation Era ships through the same governance a good platform team would enforce, automated end to end.",
         "Every change flows feature branch → staging environment → production with verification at each stage. Database changes are append-only migrations applied to staging first, and production migrations run through a manually-confirmed CI job that takes a pre-migration backup before touching anything.",
@@ -307,7 +308,7 @@ export const about = {
   heading: "Between roles, still shipping",
   paragraphs: [
     "8+ years shipping consumer products at scale — tiket.com's Flight product (~1M MAU) and Paytm's banking flows. Based in Dubai, actively looking for my next senior frontend or full-stack-leaning role: full-time or B2B contract, remote, EU/US-East overlap.",
-    "In the meantime, I've solo-built Her Aviation Era (heraviationera.com), now at 800+ users, as the only engineer — architecture, payments, and CI/CD, written with Claude Code and reviewed line-by-line behind 218 tests at a 90% coverage gate.",
+    "In the meantime, I've solo-built Her Aviation Era (heraviationera.com), now at 1,000+ users, as the only engineer — architecture, payments, and CI/CD, written with Claude Code and reviewed line-by-line behind 218 tests at a 90% coverage gate. I've also independently built DocWing, an ATS-friendly CV builder with a from-scratch keyword-scoring engine and a \"Fit to 1 page\" auto-layout tool.",
     "AI doesn't replace taste — someone still has to know what good looks like, say no, and catch it when the machine gets it wrong.",
   ],
   education:
